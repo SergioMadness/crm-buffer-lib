@@ -143,4 +143,18 @@ class Contact extends Request implements IContact
 
         return $this;
     }
+
+    /**
+     * Set visitor id
+     *
+     * @param string $visitorId
+     *
+     * @return IContact
+     */
+    public function setVisitorId(string $visitorId): IContact
+    {
+        $this->setField('visitorId', $visitorId);
+
+        return $this;
+    }
 }

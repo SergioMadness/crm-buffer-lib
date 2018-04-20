@@ -86,4 +86,13 @@ interface Contact extends Request
      * @return Contact
      */
     public function setPosition(string $position): self;
+
+    /**
+     * Set visitor id
+     *
+     * @param string $visitorId
+     *
+     * @return Contact
+     */
+    public function setVisitorId(string $visitorId): self;
 }
