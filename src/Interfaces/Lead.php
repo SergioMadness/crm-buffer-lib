@@ -160,6 +160,15 @@ interface Lead extends Request
     public function setUtmTerm(string $term): self;
 
     /**
+     * Set utm source
+     *
+     * @param string $source
+     *
+     * @return Lead
+     */
+    public function setUtmSource(string $source): self;
+
+    /**
      * Set partner id
      *
      * @param string $id
