@@ -184,4 +184,88 @@ class Lead extends Request implements ILead
 
         return $this;
     }
+
+    /**
+     * Set source id
+     *
+     * @param string $sourceId
+     *
+     * @return ILead
+     */
+    public function setSourceId(string $sourceId): ILead
+    {
+        $this->setField('UTM_SOURCE', $sourceId);
+
+        return $this;
+    }
+
+    /**
+     * Set campaign
+     *
+     * @param string $campaign
+     *
+     * @return ILead
+     */
+    public function setUtmCampaign(string $campaign): ILead
+    {
+        $this->setField('UTM_CAMPAIGN', $campaign);
+
+        return $this;
+    }
+
+    /**
+     * Set utm content
+     *
+     * @param string $content
+     *
+     * @return ILead
+     */
+    public function setUtmContent(string $content): ILead
+    {
+        $this->setField('UTM_CONTENT', $content);
+
+        return $this;
+    }
+
+    /**
+     * Set utm medium
+     *
+     * @param string $medium
+     *
+     * @return ILead
+     */
+    public function setUtmMedium(string $medium): ILead
+    {
+        $this->setField('UTM_MEDIUM', $medium);
+
+        return $this;
+    }
+
+    /**
+     * Set utm term
+     *
+     * @param string $term
+     *
+     * @return ILead
+     */
+    public function setUtmTerm(string $term): ILead
+    {
+        $this->setField('UTM_TERM', $term);
+
+        return $this;
+    }
+
+    /**
+     * Set partner id
+     *
+     * @param string $id
+     *
+     * @return ILead
+     */
+    public function setPartnerId(string $id): ILead
+    {
+        $this->setField('partner_id', $id);
+
+        return $this;
+    }
 }

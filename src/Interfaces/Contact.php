@@ -95,4 +95,58 @@ interface Contact extends Request
      * @return Contact
      */
     public function setVisitorId(string $visitorId): self;
+
+    /**
+     * Set source id
+     *
+     * @param string $sourceId
+     *
+     * @return Contact
+     */
+    public function setSourceId(string $sourceId): self;
+
+    /**
+     * Set campaign
+     *
+     * @param string $campaign
+     *
+     * @return Contact
+     */
+    public function setUtmCampaign(string $campaign): self;
+
+    /**
+     * Set utm content
+     *
+     * @param string $content
+     *
+     * @return Contact
+     */
+    public function setUtmContent(string $content): self;
+
+    /**
+     * Set utm medium
+     *
+     * @param string $medium
+     *
+     * @return Contact
+     */
+    public function setUtmMedium(string $medium): self;
+
+    /**
+     * Set utm term
+     *
+     * @param string $term
+     *
+     * @return Contact
+     */
+    public function setUtmTerm(string $term): self;
+
+    /**
+     * Set partner id
+     *
+     * @param string $id
+     *
+     * @return Contact
+     */
+    public function setPartnerId(string $id): self;
 }

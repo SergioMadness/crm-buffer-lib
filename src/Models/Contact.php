@@ -157,4 +157,88 @@ class Contact extends Request implements IContact
 
         return $this;
     }
+
+    /**
+     * Set source id
+     *
+     * @param string $sourceId
+     *
+     * @return IContact
+     */
+    public function setSourceId(string $sourceId): IContact
+    {
+        $this->setField('UTM_SOURCE', $sourceId);
+
+        return $this;
+    }
+
+    /**
+     * Set campaign
+     *
+     * @param string $campaign
+     *
+     * @return IContact
+     */
+    public function setUtmCampaign(string $campaign): IContact
+    {
+        $this->setField('UTM_CAMPAIGN', $campaign);
+
+        return $this;
+    }
+
+    /**
+     * Set utm content
+     *
+     * @param string $content
+     *
+     * @return IContact
+     */
+    public function setUtmContent(string $content): IContact
+    {
+        $this->setField('UTM_CONTENT', $content);
+
+        return $this;
+    }
+
+    /**
+     * Set utm medium
+     *
+     * @param string $medium
+     *
+     * @return IContact
+     */
+    public function setUtmMedium(string $medium): IContact
+    {
+        $this->setField('UTM_MEDIUM', $medium);
+
+        return $this;
+    }
+
+    /**
+     * Set utm term
+     *
+     * @param string $term
+     *
+     * @return IContact
+     */
+    public function setUtmTerm(string $term): IContact
+    {
+        $this->setField('UTM_TERM', $term);
+
+        return $this;
+    }
+
+    /**
+     * Set partner id
+     *
+     * @param string $id
+     *
+     * @return IContact
+     */
+    public function setPartnerId(string $id): IContact
+    {
+        $this->setField('partner_id', $id);
+
+        return $this;
+    }
 }
