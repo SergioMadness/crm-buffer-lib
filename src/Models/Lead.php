@@ -268,4 +268,18 @@ class Lead extends Request implements ILead
 
         return $this;
     }
+
+    /**
+     * Set utm source
+     *
+     * @param string $source
+     *
+     * @return ILead
+     */
+    public function setUtmSource(string $source): ILead
+    {
+        $this->setField('UTM_SOURCE', $source);
+
+        return $this;
+    }
 }

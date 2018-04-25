@@ -149,4 +149,13 @@ interface Contact extends Request
      * @return Contact
      */
     public function setPartnerId(string $id): self;
+
+    /**
+     * Set utm source
+     *
+     * @param string $source
+     *
+     * @return Contact
+     */
+    public function setUtmSource(string $source): self;
 }

@@ -241,4 +241,18 @@ class Contact extends Request implements IContact
 
         return $this;
     }
+
+    /**
+     * Set utm source
+     *
+     * @param string $source
+     *
+     * @return IContact
+     */
+    public function setUtmSource(string $source): IContact
+    {
+        $this->setField('UTM_SOURCE', $source);
+
+        return $this;
+    }
 }
