@@ -194,7 +194,7 @@ class Lead extends Request implements ILead
      */
     public function setSourceId(string $sourceId): ILead
     {
-        $this->setField('UTM_SOURCE', $sourceId);
+        $this->setField('SOURCE_ID', $sourceId);
 
         return $this;
     }

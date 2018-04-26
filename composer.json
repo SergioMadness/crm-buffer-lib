@@ -1,6 +1,6 @@
 {
   "name": "professionalweb/crm-buffer-lib",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Library to communicate with CRMBuffer",
   "homepage": "https://github.com/SergioMadness/crm-buffer-lib",
   "keywords": [
