@@ -167,7 +167,7 @@ class Contact extends Request implements IContact
      */
     public function setSourceId(string $sourceId): IContact
     {
-        $this->setField('UTM_SOURCE', $sourceId);
+        $this->setField('SOURCE_ID', $sourceId);
 
         return $this;
     }
