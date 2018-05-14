@@ -111,7 +111,7 @@ class Contact extends Request implements IContact
      */
     public function setComments(string $comments): IContact
     {
-        $this->setField('COMMENTS', $comments);
+        $this->setField('comment', $comments);
 
         return $this;
     }
