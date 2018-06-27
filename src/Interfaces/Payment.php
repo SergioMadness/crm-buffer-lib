@@ -113,4 +113,22 @@ interface Payment extends Request
      * @return Payment
      */
     public function setPartnerId(string $id): self;
+
+    /**
+     * Contact is meta-field
+     *
+     * @param string $contact
+     *
+     * @return Payment
+     */
+    public function setContact(string $contact): self;
+
+    /**
+     * Meta-field for date
+     *
+     * @param string $date
+     *
+     * @return Payment
+     */
+    public function setDate(string $date): self;
 }

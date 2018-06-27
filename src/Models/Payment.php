@@ -184,4 +184,32 @@ class Payment extends Request implements IPayment
 
         return $this;
     }
+
+    /**
+     * Contact is meta-field
+     *
+     * @param string $contact
+     *
+     * @return IPayment
+     */
+    public function setContact(string $contact): IPayment
+    {
+        $this->setField('contact', $contact);
+
+        return $this;
+    }
+
+    /**
+     * Meta-field for date
+     *
+     * @param string $date
+     *
+     * @return IPayment
+     */
+    public function setDate(string $date): IPayment
+    {
+        $this->setField('date', $date);
+
+        return $this;
+    }
 }
