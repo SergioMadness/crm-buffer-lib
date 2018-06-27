@@ -156,4 +156,32 @@ class Payment extends Request implements IPayment
 
         return $this;
     }
+
+    /**
+     * Set source id
+     *
+     * @param string $sourceId
+     *
+     * @return IPayment
+     */
+    public function setSourceId(string $sourceId): IPayment
+    {
+        $this->setField('source_id', $sourceId);
+
+        return $this;
+    }
+
+    /**
+     * Set partner id
+     *
+     * @param string $id
+     *
+     * @return IPayment
+     */
+    public function setPartnerId(string $id): IPayment
+    {
+        $this->setField('partner_id', $id);
+
+        return $this;
+    }
 }
