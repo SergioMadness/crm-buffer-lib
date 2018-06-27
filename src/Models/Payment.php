@@ -212,4 +212,18 @@ class Payment extends Request implements IPayment
 
         return $this;
     }
+
+    /**
+     * Set order id
+     *
+     * @param string $orderId
+     *
+     * @return IPayment
+     */
+    public function setOrderId(string $orderId): IPayment
+    {
+        $this->setField('order_id', $orderId);
+
+        return $this;
+    }
 }
