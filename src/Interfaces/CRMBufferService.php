@@ -19,4 +19,11 @@ interface CRMBufferService extends Sendable
      * @return Contact
      */
     public function contact(): Contact;
+
+    /**
+     * Start to work with payment
+     *
+     * @return Payment
+     */
+    public function payment(): Payment;
 }
