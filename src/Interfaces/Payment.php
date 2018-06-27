@@ -131,4 +131,13 @@ interface Payment extends Request
      * @return Payment
      */
     public function setDate(string $date): self;
+
+    /**
+     * Set order id
+     *
+     * @param string $orderId
+     *
+     * @return Payment
+     */
+    public function setOrderId(string $orderId): self;
 }
