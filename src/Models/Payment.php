@@ -152,7 +152,7 @@ class Payment extends Request implements IPayment
      */
     public function setContactId($contactId): IPayment
     {
-        $this->setField('CONTACT_IDS', $contactId);
+        $this->setField('CONTACT_ID', $contactId);
 
         return $this;
     }
