@@ -2,6 +2,7 @@
 
 use professionalweb\crmbuffer\Interfaces\Lead;
 use professionalweb\crmbuffer\Interfaces\Contact;
+use professionalweb\crmbuffer\Interfaces\Payment;
 use professionalweb\crmbuffer\Interfaces\Transport;
 use professionalweb\crmbuffer\Interfaces\CRMBufferService as ICRMBufferService;
 
@@ -69,5 +70,15 @@ class CRMBufferService implements ICRMBufferService
     public function contact(): Contact
     {
         return app(Contact::class);
+    }
+
+    /**
+     * Start to work with payment
+     *
+     * @return Payment
+     */
+    public function payment(): Payment
+    {
+        return app(Payment::class);
     }
 }
