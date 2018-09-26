@@ -1,8 +1,8 @@
-<?php namespace professionalweb\crmbuffer\Interfaces;
+<?php namespace professionalweb\IntegrationHub\Connector\Interfaces;
 
 /**
  * Has send() method
- * @package professionalweb\crmbuffer\Interfaces
+ * @package professionalweb\IntegrationHub\Connector\Interfaces
  */
 interface Sendable
 {

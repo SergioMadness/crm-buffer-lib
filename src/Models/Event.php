@@ -1,14 +1,16 @@
-<?php namespace professionalweb\crmbuffer\Models;
+<?php namespace professionalweb\IntegrationHub\Connector\Models;
 
-use professionalweb\crmbuffer\Interfaces\Transport;
-use professionalweb\crmbuffer\Interfaces\Request as IRequest;
+use professionalweb\IntegrationHub\Connector\Interfaces\Transport;
+use professionalweb\IntegrationHub\Connector\Interfaces\Event as IRequest;
 
 /**
  * Request model
- * @package professionalweb\crmbuffer\Models
+ * @package professionalweb\IntegrationHub\Connector\Models
  */
-class Request implements IRequest
+class Event implements IRequest
 {
+    public const EVENT_URL = '/api/v1/events';
+
     /**
      * Request data
      *
@@ -24,6 +26,7 @@ class Request implements IRequest
     public function __construct(Transport $transport)
     {
         $this->setTransport($transport);
+        $transport->setUrl(self::EVENT_URL);
     }
 
     /**

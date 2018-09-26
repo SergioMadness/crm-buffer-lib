@@ -1,8 +1,8 @@
-<?php namespace professionalweb\crmbuffer\Interfaces;
+<?php namespace professionalweb\IntegrationHub\Connector\Interfaces;
 
 /**
- * Interface for transport to communicate with CRMBuffer service
- * @package professionalweb\crmbuffer\Interfaces
+ * Interface for transport to communicate with IntegrationHub service
+ * @package professionalweb\IntegrationHub\Connector\Interfaces
  */
 interface Transport extends Sendable
 {

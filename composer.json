@@ -1,12 +1,10 @@
 {
-  "name": "professionalweb/crm-buffer-lib",
-  "description": "Library to communicate with CRMBuffer",
-  "homepage": "https://github.com/SergioMadness/crm-buffer-lib",
+  "name": "professionalweb/integration-hub-connector",
+  "description": "Library to communicate with IntegrationHub",
+  "homepage": "https://github.com/SergioMadness/integration-hub-connector",
   "keywords": [
     "professional-web",
-    "crm",
-    "buffer",
-    "bitrix24",
+    "integration-hub",
     "laravel"
   ],
   "minimum-stability": "stable",
@@ -20,12 +18,12 @@
   ],
   "support": {
     "email": "zinchenko@web-development.pw",
-    "issues": "https://github.com/SergioMadness/crm-buffer-lib/issues",
-    "wiki": "https://github.com/SergioMadness/crm-buffer-lib/wiki",
-    "source": "https://github.com/SergioMadness/crm-buffer-lib"
+    "issues": "https://github.com/SergioMadness/integration-hub-connector/issues",
+    "wiki": "https://github.com/SergioMadness/integration-hub-connector/wiki",
+    "source": "https://github.com/SergioMadness/integration-hub-connector"
   },
   "require": {
-    "illuminate/support": "5.2.* || 5.3.* || 5.4.* || 5.5.* || 5.6.*"
+    "illuminate/support": "5.*"
   },
   "require-dev": {
   },
@@ -34,7 +32,14 @@
   },
   "autoload": {
     "psr-4": {
-      "professionalweb\\crmbuffer\\": "src/"
+      "professionalweb\\IntegrationHub\\Connector\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "professionalweb\\IntegrationHub\\Connector\\IntegrationHubProvider"
+      ]
     }
   }
 }

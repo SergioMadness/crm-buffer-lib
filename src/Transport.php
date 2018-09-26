@@ -1,10 +1,11 @@
-<?php namespace professionalweb\crmbuffer;
+<?php namespace professionalweb\IntegrationHub\Connector;
 
-use professionalweb\crmbuffer\Interfaces\Transport as ITransport;
+use professionalweb\IntegrationHub\Connector\Interfaces\DataSigner;
+use professionalweb\IntegrationHub\Connector\Interfaces\Transport as ITransport;
 
 /**
- * Transport to communicate with CRMBuffer service
- * @package professionalweb\crmbuffer
+ * Transport to communicate with IntegrationHub service
+ * @package professionalweb\IntegrationHub\Connector
  */
 class Transport implements ITransport
 {
@@ -35,9 +36,15 @@ class Transport implements ITransport
      */
     private $secretId;
 
+    /**
+     * @var DataSigner
+     */
+    private $dataSigner;
+
     public function __construct(string $serviceUrl, string $clientId, string $secretId)
     {
         $this
+            ->setDataSigner(app(DataSigner::class))
             ->setClientId($clientId)
             ->setSecretId($secretId)
             ->setBaseUrl($serviceUrl);
@@ -81,19 +88,13 @@ class Transport implements ITransport
         $data = $this->getData();
         $data['token'] = $this->getClientId();
 
-        ksort($data, SORT_STRING);
-
-        $stringToHash = http_build_query($data);
-
-        $correctSignature = md5($stringToHash . $this->getSecretId());
-
-        $data['sig'] = $correctSignature;
+        $data['sig'] = $this->getDataSigner()->sign($data, $this->getSecretId());
 
         return $data;
     }
 
     /**
-     * Send POST request to CRMBuffer
+     * Send POST request to IntegrationHub
      *
      * @param string $url
      * @param array  $params
@@ -103,7 +104,7 @@ class Transport implements ITransport
     protected function sendPostRequest($url, array $params): string
     {
         $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_USERAGENT, 'ProfessionalWeb.CRMBuffer.SDK/PHP');
+        curl_setopt($curl, CURLOPT_USERAGENT, 'ProfessionalWeb.IntegrationHub.SDK/PHP');
         curl_setopt($curl, CURLOPT_POST, 1);
         $query = http_build_query($params);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $query);
@@ -114,6 +115,8 @@ class Transport implements ITransport
 
         return (string)$body;
     }
+
+    //<editor-fold desc="Getters and setters">
 
     /**
      * Set url to send request
@@ -223,5 +226,24 @@ class Transport implements ITransport
         return $this;
     }
 
+    /**
+     * @return DataSigner
+     */
+    public function getDataSigner(): DataSigner
+    {
+        return $this->dataSigner;
+    }
 
+    /**
+     * @param DataSigner $dataSigner
+     *
+     * @return Transport
+     */
+    public function setDataSigner(DataSigner $dataSigner): self
+    {
+        $this->dataSigner = $dataSigner;
+
+        return $this;
+    }
+    //</editor-fold>
 }

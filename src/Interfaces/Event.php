@@ -1,10 +1,10 @@
-<?php namespace professionalweb\crmbuffer\Interfaces;
+<?php namespace professionalweb\IntegrationHub\Connector\Interfaces;
 
 /**
  * Interface for request
- * @package professionalweb\crmbuffer\Interfaces
+ * @package professionalweb\IntegrationHub\Connector\Interfaces
  */
-interface Request extends Sendable
+interface Event extends Sendable
 {
     /**
      * Set field
@@ -12,7 +12,7 @@ interface Request extends Sendable
      * @param string $key
      * @param mixed  $value
      *
-     * @return Request
+     * @return Event
      */
     public function setField(string $key, $value): self;
 
@@ -30,7 +30,7 @@ interface Request extends Sendable
      *
      * @param array $data
      *
-     * @return Request
+     * @return Event
      */
     public function setData(array $data): self;
 }
