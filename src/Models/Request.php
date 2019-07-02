@@ -36,7 +36,7 @@ class Request implements IRequest
      */
     public function setField(string $key, $value): IRequest
     {
-        $this->data[$key] = $value;
+        $this->data[$key] = urldecode($value);
 
         return $this;
     }
@@ -62,7 +62,9 @@ class Request implements IRequest
      */
     public function setData(array $data): IRequest
     {
-        $this->data = $data;
+        foreach ($data as $key => $val) {
+            $this->setField($key, $val);
+        }
 
         return $this;
     }
