@@ -105,11 +105,17 @@ class Transport implements ITransport
         $curl = curl_init($url);
         curl_setopt($curl, CURLOPT_USERAGENT, 'ProfessionalWeb.CRMBuffer.SDK/PHP');
         curl_setopt($curl, CURLOPT_POST, 1);
-        $query = http_build_query($params);
+//        $query = http_build_query($params);
+        $query = json_encode($params);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, [
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen($query),
+                'Expect:',
+            ]
+        );
         curl_setopt($curl, CURLOPT_POSTFIELDS, $query);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 //        curl_setopt($curl, CURLOPT_HEADER, 1);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, ['Expect:']);
         $body = curl_exec($curl);
 
         return (string)$body;
